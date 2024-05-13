@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<style>
+    #seccion {
+        display: flex;
+        width: 1200px;
+        height: 430px;
+        justify-content: center;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
+    #seccion img {
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: .8;
+        transition: .5s ease0;
+    }
+
+    #seccion img:hover {
+        cursor: crosshair;
+        width: 500px;
+        opacity: 1;
+        filter: contrast(120%);
+    }
+    .navbar {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que la barra de navegación esté sobre otros elementos */
+    }
+</style>
+
+<body>
+
+    <nav class="bg-black border-gray-200 dark:bg-black fixed top-0 w-full z-10">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2oa8JaBJYJYYx1zVSA-pF49gDjc0ankyWQ9uS8pAWjA&s"
+                    class="h-8 rounded-full" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Currículum
+                    Vitae</span>
+            </a>
+            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                    id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
+                    data-dropdown-placement="bottom">
+                    <span class="sr-only">Open user menu</span>
+                    <img class="w-8 h-8 rounded-full"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3q9EpHgNKXgcHBMHDiiGFx674dEpaCq5uVFFcwXolIw&s"
+                        alt="user photo">
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-gray-700">
+                    <li>
+                        <a href="#inicio"
+                            class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                            aria-current="page">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#sobreMi"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sobre mi</a>
+                    </li>
+                    <li>
+                        <a href="#pro"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ámbito profesional</a>
+                    </li>
+                    <li>
+                        <a href="#educacion"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Educación</a>
+                    </li>
+                    <li>
+                        <a href="#habi"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Habilidades</a>
+                    </li>
+                    <li>
+                        <a href="#idiomas"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Idiomas</a>
+                    </li>
+                    <li>
+                        <a href="#redes"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Redes sociales</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio"
+        class="mt-[1px] bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-white bg-blend-multiply">
+        <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                Bienvenido a mi hoja de vida</h1>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Hola, soy Gabriel Alexander
+                Diaz Jiménez, estudiante de la <br> Universidad Internacional del Ecuador</p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                <a href="#sobreMi"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    Seguir leyendo
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+                <a href="#redes"
+                    class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    Redes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="sobreMi" class="py-8 px-40">
+        <hr class="border-t-2 border-black pb-8">
+        <h1 class="text-[#1c4ed9] text-3xl font-bold text-center">
+            INFORMACION SOBRE MI
+        </h1>
+        <P class="text-center text-lg pt-6">
+            Como parte de mi currículum para hacerlo mas interesante he decidido crear esta página, mediante la cuál escribire acerca de mi, aún estoy en proceso para el camino profesional, pero, por algo iniciamos... A continuación mis datos personales: <br> <br>
+            <b>Nombre:</b> Gabriel Alexander Díaz Jiménez. <br>
+            <b>Nacimiento:</b> 23 de febrero del 2024 <br>
+            <b>Edad:</b> Actualmente 19 años <br>
+            <b>Correo electronico:</b> gabriel.diaz.23.02.05@gmail.com <br>
+            <b>Número de teléfono:</b> 0939135755. <br>
+            <b>Lugar de nacimiento:</b> Loja, Ecuador. <br>
+            <b>Cédula:</b> 1106251927. <br>
+            <b>Estado civil:</b> Soltero. <br>
+            <b>Código postal:</b> 110108. <br>
+            <b>Dirección:</b> Jose Antonio Eguiguren entre Juan Jose Peña y Jose Joaquin de Olmedo. <br>
+        </P>
+
+    </div>
+
+    <section id="seccion" class="">
+        <img src="../fotos/1.jpg" alt="">
+        <img src="../fotos/2.jpg" alt="">
+        <img src="../fotos/3.jpg" alt="">
+        <img src="../fotos/4.jpg" alt="">
+    </section>
+
+    <hr class="border-t-2 border-black pb-8">
+
+    <div id="pro" class="bg-black py-10 px-40">
+        <h1 class="text-[#1c4ed9] text-3xl font-bold text-center">
+            AMBITO PROFESIONAL
+        </h1>
+        <P class="text-center text-white text-lg pt-6">
+            Dentro del ámbito profesional acerca de mi carrera no trabajé, aún estoy estudiando, actualmente estoy en cuarto ciclo de la misma, ya en cuarto ciclo he realizado prácticas en una empresa, y fuera de eso trabajé en otras cosas como, operario de soldador, en limpieza, de comerciante y en una panadería. Entonces a dia de hoy no ejerzo de mi carrera, por ende no tengo experiencia laboral en sí.
+        </P>
+    </div>
+
+    <div id="educacion" class="pt-8 px-40">
+        <hr class="border-t-2 border-black pb-8">
+        <h1 class="text-[#1c4ed9] text-3xl font-bold text-center">
+            EDUCACIÓN
+        </h1>
+        <div class="flex flex-row">
+            <img width="300" src="https://static.vecteezy.com/system/resources/previews/020/274/235/non_2x/student-icon-for-your-website-design-logo-app-ui-free-vector.jpg" alt="">
+            <P class="text-center text-lg pt-10 pb-10">
+                Inicié mis estudios en una guarderia, la cual es "Centro de educación inicial particular de la pasión de nuestro señor Jesucristo", después ingrese a la escuela "Miguel Riofrío", estuve toda la escuela hasta décimo año, debido a que en la escuela no habia Bachillerato, ingrese al Colegio "Beatriz Cueva de Ayora", estuve en primero de bachillerato solo el primer quimestre y debido a conflictos, me cambiaron a otro colegio llamado "ASLOCH", ahi me gradué oficialmente del colegio y terminé mis estudios colegiales. <br>
+                Seguidamente ingrese a la "Universidad Internacional del Ecuador", donde ya a día de hoy estoy en cuarto ciclo y estudio Ingenieria en Tecnologías de la Información y Comunicación.
+            </P>
+        </div>
+
+        <hr class="border-t-2 border-black pt-8">
+    </div>
+
+    <div id="habi" class="bg-black py-10 px-40 rounded-full">
+        <h1 class="text-[#1c4ed9] text-3xl font-bold text-center">
+            HABILIDADES
+        </h1>
+        <div class="flex flex-row">
+            <P class="text-center text-white text-lg pt-10">
+                Dentro de mis habilidades, trato siempre de buscar soluciones o aprender algo que no sepa, me intereso a fondo en algo que me llama la atención, me gusta ver documentales y videos sobre lo que quiero aprender, me considero bueno escrbiendo, me gusta escribir y en sí todo lo que es temas que profundizan y te llevan a reflexionar, me gustan. <br>
+                Dentro de lo deportivo soy bastante activo, principalmente me gusta bastante el fútbol, y puedo acoplarme bastante rapido a otros deportes.
+                Y en general me gusta verle siempre el lado positivo a las cosas, tratar de hacer las cosas bien, no sobrepensar demasido y disfutar de los momentos.
+            </P>
+            <img width="250" src="https://cdn-icons-png.flaticon.com/512/10262/10262316.png" alt="">
+        </div>
+    </div>
+
+    <div id="idiomas" class="pt-8 px-40">
+        <hr class="border-t-2 border-black pb-8">
+        <h1 class="text-[#1c4ed9] text-3xl font-bold text-center">
+            IDIOMAS
+        </h1>
+        <div class="flex flex-row pb-5">
+            <img width="150" src="https://static.vecteezy.com/system/resources/previews/020/559/262/non_2x/language-button-globe-icon-simple-style-language-course-poster-background-symbol-globe-brand-logo-design-element-globe-t-shirt-printing-for-sticker-free-vector.jpg" alt="">
+            <P class="text-center text-lg pt-10 pb-10">
+                Dentro de mi carrera es muy importante aprender inglés, asi que actualmente estoy aprendiendo este idioma, estoy en un nivel intermedio, especificamente en B1, y poco a poco espero aprender más. <br>
+                Uno de los idiomas también que me gustaría aprender es el latín.
+            </P>
+        </div>
+    </div>
+
+    <div id="redes" class="bg-black py-10 px-40">
+        <h1 class="text-[#1c4ed9] text-3xl font-bold text-center">
+            REDES SOCIALES
+        </h1>
+        <P class="text-center text-white text-lg pt-6">
+            ¿Quieres conocerme mas? <br> Aqui tienes mis redes sociales:
+        </P>
+
+        <section class="flex flex-row justify-center pt-6">
+            <a href="https://www.facebook.com/gabriel.diaz.904750" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class="mx-6">
+                    <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+                </svg>
+            </a>
+            
+            <a href="https://www.instagram.com/gabriel.diiaz._/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                    <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+                </svg>
+            </a>
+            
+            <a href="https://x.com/Gabriiel_DiaZz?t=pMEjda9kphYc-tp2cG3uQQ&s=09" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                    <path fill="#03A9F4" d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
+                </svg>
+            </a>
+            
+            <a href="https://github.com/gabriiel23" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                    <path fill="#2100c4" d="M24,4C12.954,4,4,12.954,4,24c0,8.887,5.801,16.411,13.82,19.016h12.36 C38.199,40.411,44,32.887,44,24C44,12.954,35.046,4,24,4z"></path><path fill="#ddbaff" d="M37,23.5c0-2.897-0.875-4.966-2.355-6.424C35.591,15.394,34.339,12,34.339,12 c-2.5,0.5-4.367,1.5-5.609,2.376C27.262,14.115,25.671,14,24,14c-1.71,0-3.339,0.118-4.834,0.393 c-1.242-0.879-3.115-1.889-5.632-2.393c0,0-1.284,3.492-0.255,5.146C11.843,18.6,11,20.651,11,23.5 c0,6.122,3.879,8.578,9.209,9.274C19.466,33.647,19,34.764,19,36l0,0.305c-0.163,0.045-0.332,0.084-0.514,0.108 c-1.107,0.143-2.271,0-2.833-0.333c-0.562-0.333-1.229-1.083-1.729-1.813c-0.422-0.616-1.263-2.032-3.416-1.979 c-0.376-0.01-0.548,0.343-0.5,0.563c0.043,0.194,0.213,0.5,0.896,0.75c0.685,0.251,1.063,0.854,1.438,1.458 c0.418,0.674,0.417,2.468,2.562,3.416c1.53,0.677,2.988,0.594,4.097,0.327l0.001,3.199c0,0.639-0.585,1.125-1.191,1.013 C19.755,43.668,21.833,44,24,44c2.166,0,4.243-0.332,6.19-0.984C29.584,43.127,29,42.641,29,42.002L29,36 c0-1.236-0.466-2.353-1.209-3.226C33.121,32.078,37,29.622,37,23.5z"></path><path fill="#ddbaff" d="M15,18l3.838-1.279c1.01-0.337,1.231-1.684,0.365-2.302l-0.037-0.026 c-2.399,0.44-4.445,1.291-5.888,2.753C13.596,17.658,14.129,18,15,18z"></path><path fill="#ddbaff" d="M28.693,14.402c-0.878,0.623-0.655,1.987,0.366,2.327L32.872,18c0.913,0,1.461-0.37,1.773-0.924 c-1.46-1.438-3.513-2.274-5.915-2.701C28.717,14.384,28.705,14.393,28.693,14.402z"></path><path fill="#ddbaff" d="M24,31c-1.525,0-2.874,0.697-3.791,1.774C21.409,32.931,22.681,33,24,33s2.591-0.069,3.791-0.226 C26.874,31.697,25.525,31,24,31z"></path>
+                </svg>
+            </a>
+            
+            <a href="https://discord.com/channels/@me" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                    <path fill="#8c9eff" d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"></path>
+                </svg>
+            </a>
+            
+        </section>
+    </div>
+
+    <footer class="bg-black text-white">
+        <hr class="my-6 border-gray-700">
+        <p class="text-sm text-center py-4">&copy; 2024 Todos los derechos reservados. Sitio web desarrollado por <a
+                href="#" class="hover:text-gray-400">Gabriel Díaz</a>.</p>
+    </footer>
+
+</body>
+
+</html>
